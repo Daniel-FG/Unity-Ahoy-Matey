@@ -16,4 +16,9 @@ public class Player : NetworkBehaviour
         float zpos = CrossPlatformInputManager.GetAxis("Vertical");
         transform.position = new Vector3(transform.position.x + xpos, transform.position.y, transform.position.z + zpos);
 	}
+
+    public override void OnStartLocalPlayer()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
 }
